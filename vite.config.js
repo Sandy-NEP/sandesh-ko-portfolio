@@ -59,7 +59,7 @@ logger.error = (msg, options) => {
 
 // FINAL CONFIG EXPORT
 export default defineConfig({
-  base: '/', // Changed to '/' for Vercel deployment
+  base: './', // Changed to '/' for Vercel deployment
   customLogger: logger,
   plugins: [react(), addTransformIndexHtml],
   server: {
