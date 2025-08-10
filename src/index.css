@@ -1,0 +1,369 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .default {
+    --background: 257 100% 6%; /* #0A0020 */
+    --foreground: 240 50% 95%; /* Light gray for text */
+    
+    --card: 257 50% 12%; /* Darker purple for cards */
+    --card-foreground: 240 50% 95%;
+
+    --popover: 257 100% 6%;
+    --popover-foreground: 240 50% 95%;
+
+    --primary: 270 80% 60%; /* Vibrant Purple */
+    --primary-foreground: 240 50% 95%;
+
+    --secondary: 330 80% 60%; /* Vibrant Pink */
+    --secondary-foreground: 240 50% 95%;
+
+    --muted: 257 30% 25%; /* Muted purple */
+    --muted-foreground: 240 30% 70%;
+
+    --accent: 300 80% 65%; /* A mix, leaning pink/purple */
+    --accent-foreground: 240 50% 95%;
+
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 240 50% 95%;
+
+    --border: 257 40% 20%; /* Border for cards, inputs */
+    --input: 257 40% 15%; /* Input background */
+    --ring: 270 80% 70%; /* Lighter Purple for focus rings */
+
+    --radius: 0.75rem; 
+  }
+
+  .cyber {
+    --background: 120 100% 2%; /* #001100 */
+    --foreground: 120 50% 95%; /* Light green for text */
+    
+    --card: 120 50% 8%; /* Darker green for cards */
+    --card-foreground: 120 50% 95%;
+
+    --popover: 120 100% 2%;
+    --popover-foreground: 120 50% 95%;
+
+    --primary: 120 100% 50%; /* Neon Green */
+    --primary-foreground: 120 100% 10%;
+
+    --secondary: 140 80% 60%; /* Cyan Green */
+    --secondary-foreground: 120 100% 10%;
+
+    --muted: 120 30% 15%; /* Muted green */
+    --muted-foreground: 120 30% 70%;
+
+    --accent: 160 80% 50%; /* Matrix green */
+    --accent-foreground: 120 100% 10%;
+
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 120 50% 95%;
+
+    --border: 120 40% 15%; /* Border for cards, inputs */
+    --input: 120 40% 10%; /* Input background */
+    --ring: 120 100% 60%; /* Neon green for focus rings */
+  }
+
+  .solar {
+    --background: 25 100% 4%; /* #330800 */
+    --foreground: 25 50% 95%; /* Light orange for text */
+    
+    --card: 25 50% 10%; /* Darker orange for cards */
+    --card-foreground: 25 50% 95%;
+
+    --popover: 25 100% 4%;
+    --popover-foreground: 25 50% 95%;
+
+    --primary: 35 100% 60%; /* Bright Orange */
+    --primary-foreground: 25 100% 10%;
+
+    --secondary: 45 80% 60%; /* Yellow Orange */
+    --secondary-foreground: 25 100% 10%;
+
+    --muted: 25 30% 20%; /* Muted orange */
+    --muted-foreground: 25 30% 70%;
+
+    --accent: 15 80% 55%; /* Red Orange */
+    --accent-foreground: 25 100% 10%;
+
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 25 50% 95%;
+
+    --border: 25 40% 18%; /* Border for cards, inputs */
+    --input: 25 40% 12%; /* Input background */
+    --ring: 35 100% 70%; /* Bright orange for focus rings */
+  }
+
+  .oceanic {
+    --background: 200 100% 4%; /* #001133 */
+    --foreground: 200 50% 95%; /* Light blue for text */
+    
+    --card: 200 50% 10%; /* Darker blue for cards */
+    --card-foreground: 200 50% 95%;
+
+    --popover: 200 100% 4%;
+    --popover-foreground: 200 50% 95%;
+
+    --primary: 190 100% 60%; /* Cyan Blue */
+    --primary-foreground: 200 100% 10%;
+
+    --secondary: 210 80% 60%; /* Ocean Blue */
+    --secondary-foreground: 200 100% 10%;
+
+    --muted: 200 30% 20%; /* Muted blue */
+    --muted-foreground: 200 30% 70%;
+
+    --accent: 180 80% 55%; /* Teal */
+    --accent-foreground: 200 100% 10%;
+
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 200 50% 95%;
+
+    --border: 200 40% 18%; /* Border for cards, inputs */
+    --input: 200 40% 12%; /* Input background */
+    --ring: 190 100% 70%; /* Cyan for focus rings */
+  }
+
+  .monochrome {
+    --background: 0 0% 8%; /* #141414 */
+    --foreground: 0 0% 95%; /* Light gray for text */
+    
+    --card: 0 0% 12%; /* Darker gray for cards */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 90%; /* Light Gray */
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 70%; /* Medium Gray */
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 25%; /* Muted gray */
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 60%; /* Accent gray */
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%; /* Border for cards, inputs */
+    --input: 0 0% 15%; /* Input background */
+    --ring: 0 0% 80%; /* Light gray for focus rings */
+  }
+
+  .retro {
+    --background: 300 100% 4%; /* #330033 */
+    --foreground: 300 50% 95%; /* Light pink for text */
+    
+    --card: 300 50% 10%; /* Darker pink for cards */
+    --card-foreground: 300 50% 95%;
+
+    --popover: 300 100% 4%;
+    --popover-foreground: 300 50% 95%;
+
+    --primary: 320 100% 70%; /* Hot Pink */
+    --primary-foreground: 300 100% 10%;
+
+    --secondary: 280 80% 60%; /* Purple Pink */
+    --secondary-foreground: 300 100% 10%;
+
+    --muted: 300 30% 20%; /* Muted pink */
+    --muted-foreground: 300 30% 70%;
+
+    --accent: 180 80% 60%; /* Cyan accent */
+    --accent-foreground: 300 100% 10%;
+
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 300 50% 95%;
+
+    --border: 300 40% 18%; /* Border for cards, inputs */
+    --input: 300 40% 12%; /* Input background */
+    --ring: 320 100% 80%; /* Hot pink for focus rings */
+  }
+
+  .dark {
+    /* Same as default for backward compatibility */
+    --background: 257 100% 6%;
+    --foreground: 240 50% 95%;
+    --card: 257 50% 12%;
+    --card-foreground: 240 50% 95%;
+    --popover: 257 100% 6%;
+    --popover-foreground: 240 50% 95%;
+    --primary: 270 80% 60%;
+    --primary-foreground: 240 50% 95%;
+    --secondary: 330 80% 60%;
+    --secondary-foreground: 240 50% 95%;
+    --muted: 257 30% 25%;
+    --muted-foreground: 240 30% 70%;
+    --accent: 300 80% 65%;
+    --accent-foreground: 240 50% 95%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 240 50% 95%;
+    --border: 257 40% 20%;
+    --input: 257 40% 15%;
+    --ring: 270 80% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  .font-unbounded {
+    font-family: 'Unbounded', cursive;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.6);
+  border-radius: 10px;
+  border: 1px solid hsl(var(--background));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+.glass-card {
+  background: hsl(var(--card) / 0.6); /* Adjust alpha for more/less transparency */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid hsl(var(--border) / 0.5); /* Subtle border */
+  border-radius: var(--radius);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+}
+
+.button-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 transition-all duration-300;
+}
+
+.section-padding {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+.container-custom {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+/* For the hero section background image with overlay */
+.hero-bg-image {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero-bg-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, hsl(var(--background) / 0.5) 0%, hsl(var(--background) / 0.9) 70%, hsl(var(--background)) 100%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* For project card image hover effect */
+.project-card-image {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.group:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+/* For skill icons */
+.skill-icon-container {
+  @apply bg-card p-4 rounded-lg flex justify-center items-center transition-all duration-300 hover:bg-primary/20 hover:scale-105 border border-border;
+}
+.skill-icon {
+  @apply h-10 w-10 text-primary;
+}
+
+/* Custom focus visible style for better accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-offset-2 ring-ring ring-offset-background;
+}
+
+/* Remove default styling from Radix Dialog/Modal */
+.rdc-dialog-content {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.rdc-dialog-overlay {
+  background: hsl(var(--background) / 0.7) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Theme transition */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
