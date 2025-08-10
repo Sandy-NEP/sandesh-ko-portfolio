@@ -7,7 +7,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "buildCommand": "npx run build",
+        "buildCommand": "npx vite build",
         "installCommand": "npm install"
       }
     }
