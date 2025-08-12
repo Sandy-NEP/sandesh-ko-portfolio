@@ -59,7 +59,7 @@ logger.error = (msg, options) => {
 
 // FINAL CONFIG EXPORT
 export default defineConfig({
-  base: './', // Changed to '/' for Vercel deployment
+  base: '/', // Fixed for Vercel deployment
   customLogger: logger,
   plugins: [react(), addTransformIndexHtml],
   server: {
@@ -69,8 +69,7 @@ export default defineConfig({
     headers: {
       'Cross-Origin-Embedder-Policy': 'credentialless',
     },
-    allowedHosts:['f99e20d9-ecba-48c5-b142-119e37264f7e-00-3lsbxn9pt4uq5.sisko.replit.dev']
-    ,
+    // Removed allowedHosts for cleaner config - add back if needed for local development
   },
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
