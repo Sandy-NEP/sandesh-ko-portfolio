@@ -30,9 +30,9 @@ const BuyMeACoffeeModal = ({ isOpen, onClose, paymentOptions }) => {
   };
 
   const paymentItems = [
-    { id: "esewa", label: "eSewa ID", value: paymentOptions.esewa, icon: "src/assets/img/esewa-logo.png" },
-    { id: "khalti", label: "Khalti ID", value: paymentOptions.khalti, icon: "src/assets/img/khalti-logo.png" },
-    { id: "bank", label: `Bank (${paymentOptions.bank.name})`, value: paymentOptions.bank.acc, icon: "src/assets/img/bank-logo.png" },
+    { id: "esewa", label: "eSewa ID", value: paymentOptions.esewa, icon: "../img/esewa-logo.png" },
+    { id: "khalti", label: "Khalti ID", value: paymentOptions.khalti, icon: "../img/khalti-logo.png" },
+    { id: "bank", label: `Bank (${paymentOptions.bank.name})`, value: paymentOptions.bank.acc, icon: "../img/bank-logo.png" },
   ];
 
   if (!isOpen) return null;

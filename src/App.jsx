@@ -30,11 +30,11 @@ const sandeshData = {
   email: "sandeshghimire4004@gmail.com",
   phone: "9842163841",
   cvUrl: "#",
-  profileImage: "../assets/img/background.jpg",
-  myimage:"../assets/img/sandesh2.jpg",
-  aboutImage: "../assets/img/sandesh2.jpg",
-  contactImage: "../assets/img/About.jpg",
-  contactGif:"../assets/img/pengu.gif",
+  profileImage: "../img/background.jpg",
+  myimage:"../img/sandesh2.jpg",
+  aboutImage: "../img/sandesh2.jpg",
+  contactImage: "../img/About.jpg",
+  contactGif:"../img/pengu.gif",
 
   socialMedia: {
     facebook: { link: "https://www.facebook.com/sandesh.ghimire.798", color: "text-blue-600", hoverColor: "hover:text-blue-500" },
@@ -64,7 +64,7 @@ const sandeshData = {
       date: "// jan 2025",
       description: "A modern online store for Clothes with a clean UI and secure payment integration. Features include advanced product filtering, dynamic cart updates, and an admin dashboard for managing inventory.",
       technologies: ["React", "Tailwind CSS", "Stripe API", "Node.js"],
-      imageUrl: "../assets/img/E-commerce-Platform.png",
+      imageUrl: "../img/E-commerce-Platform.png",
       tags: ["E-commerce", "Tech"],
       liveLink: "#",
     },
@@ -89,9 +89,9 @@ const sandeshData = {
   ],
   hobbiesGallery: [
     { src: "https://storage.googleapis.com/hostinger-horizons-assets-prod/23f50b9b-3bcd-4f41-a441-8351c3cfd821/157c524b88ec3b267666d6c7e903f02d.jpg", alt: "Sandesh playing guitar" }, // User provided image
-    { src: "../assets/img/sandesh1.jpg", alt: "Photography example 1" },
-    { src: "../assets/img/sandesh2.jpg", alt: "Photography example 2" },
-    { src: "../assets/img/sandesh3.jpg", alt: "Photography example 3" },
+    { src: "../img/sandesh1.jpg", alt: "Photography example 1" },
+    { src: "../img/sandesh2.jpg", alt: "Photography example 2" },
+    { src: "../img/sandesh3.jpg", alt: "Photography example 3" },
   ],
   paymentOptions: {
     esewa: "9842163841",

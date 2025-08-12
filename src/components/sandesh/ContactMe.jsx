@@ -123,7 +123,7 @@ const ContactMe = ({ data }) => {
               style={{ width: "600px", maxWidth: "200vw" }}
             >
               <img
-                src="../assets/img/cat.png"
+                src="../img/cat.png"
                 alt="Cat"
                 className="w-full h-auto object-contain drop-shadow-lg"
               />
@@ -147,7 +147,7 @@ const ContactMe = ({ data }) => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Adam"
+                      placeholder="Sandesh"
                       className="w-full px-3 py-2 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring outline-none text-foreground placeholder-muted-foreground text-sm"
                     />
                   </div>
@@ -159,7 +159,7 @@ const ContactMe = ({ data }) => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="adam@email.com"
+                      placeholder="sandesh@gmail.com"
                       required
                       className="w-full px-3 py-2 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-ring outline-none text-foreground placeholder-muted-foreground text-sm"
                     />
