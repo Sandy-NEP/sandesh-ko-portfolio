@@ -22,7 +22,8 @@ function SkeletonLoader() {
   return (
     <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background">
       <h1
-        className="text-[64px] md:text-[96px] font-extrabold uppercase tracking-[0.25em] mb-4 select-none"
+        className="font-extrabold uppercase tracking-[0.25em] mb-4 select-none
+          text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem]"
         style={{
           color: "transparent",
           background: "linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%)",
@@ -31,17 +32,24 @@ function SkeletonLoader() {
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           animation: "shimmer 2s infinite",
-          letterSpacing: "12px",
+          letterSpacing: "0.15em",
+          textAlign: "center",
+          width: "100%",
+          maxWidth: "100vw",
+          wordBreak: "break-word",
         }}
       >
         WELCOME
       </h1>
       <p
-        className="text-2xl md:text-3xl font-semibold select-none"
+        className="font-semibold select-none text-lg sm:text-xl md:text-2xl lg:text-3xl"
         style={{
           color: "rgba(255,255,255,0.6)",
           letterSpacing: "2px",
           animation: "fadeInUp 1s ease-out 1s both",
+          textAlign: "center",
+          width: "90vw",
+          maxWidth: "600px",
         }}
       >
         Preparing your experience
