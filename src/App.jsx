@@ -70,7 +70,7 @@ function SkeletonLoader() {
 
 const sandeshData = {
   name: "Sandesh Ghimire",
-  title: "Aspiring Web Developer",
+  title: "A spiring Web Developer",
   age: 17,
   caste: "Ghimire",
   country: "Nepal",

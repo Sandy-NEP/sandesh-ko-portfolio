@@ -35,7 +35,7 @@ const Hero = ({ data }) => {
             <p className="text-lg md:text-xl text-primary uppercase tracking-wider font-medium mb-6">
               <AnimatedText 
                 text={`${data.title} | Fullstack Developer`}
-                delay={1000}
+                delay={10}
               />
             </p>
             <p className="text-base md:text-lg text-gray-300 mb-10 max-w-xl mx-auto md:mx-0">
