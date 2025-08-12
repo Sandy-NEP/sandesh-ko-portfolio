@@ -17,6 +17,49 @@ import ThemeSwitcher from "@/components/sandesh/ThemeSwitcher";
 import ThreeBackground from "@/components/three/ThreeBackground";
 import FloatingElements from "@/components/ui/FloatingElements";
 
+// --- Skeleton Loader Component ---
+function SkeletonLoader() {
+  return (
+    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background">
+      <h1
+        className="text-[64px] md:text-[96px] font-extrabold uppercase tracking-[0.25em] mb-4 select-none"
+        style={{
+          color: "transparent",
+          background: "linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%)",
+          backgroundSize: "200% 100%",
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          animation: "shimmer 2s infinite",
+          letterSpacing: "12px",
+        }}
+      >
+        WELCOME
+      </h1>
+      <p
+        className="text-2xl md:text-3xl font-semibold select-none"
+        style={{
+          color: "rgba(255,255,255,0.6)",
+          letterSpacing: "2px",
+          animation: "fadeInUp 1s ease-out 1s both",
+        }}
+      >
+        Preparing your experience
+      </p>
+      <style>{`
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(20px);}
+          100% { opacity: 1; transform: translateY(0);}
+        }
+      `}</style>
+    </div>
+  );
+}
+
 const sandeshData = {
   name: "Sandesh Ghimire",
   title: "Aspiring Web Developer",
@@ -113,10 +156,26 @@ function App() {
     return localStorage.getItem('portfolio-theme') || 'default';
   });
 
+  // --- Skeleton loading state ---
+  const [loading, setLoading] = React.useState(() => {
+    // Only show loader on first visit in this session
+    return sessionStorage.getItem("hasLoaded") ? false : true;
+  });
+
   React.useEffect(() => {
     localStorage.setItem('portfolio-theme', currentTheme);
     document.documentElement.className = currentTheme;
   }, [currentTheme]);
+
+  React.useEffect(() => {
+    if (loading) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem("hasLoaded", "true");
+      }, 1200);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
   const handleContactSubmit = (formData) => {
     console.log("Contact form submitted:", formData);
@@ -127,6 +186,10 @@ function App() {
       className: "bg-gradient-to-r from-purple-600 to-pink-600 border-none text-white",
     });
   };
+
+  if (loading) {
+    return <SkeletonLoader />;
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground font-inter overflow-x-hidden">
