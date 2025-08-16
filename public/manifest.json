@@ -1,0 +1,27 @@
+
+{
+  "name": "Sandesh Ghimire - Web Developer Portfolio",
+  "short_name": "Sandesh Portfolio",
+  "description": "Portfolio website for Sandesh Ghimire, a passionate web developer and student from Nepal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0020",
+  "theme_color": "#8B5CF6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/profile.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/profile.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "web development"],
+  "lang": "en-US"
+}

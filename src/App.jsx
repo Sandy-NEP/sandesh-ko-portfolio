@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
@@ -16,6 +16,66 @@ import { ChevronUp, Coffee } from "lucide-react";
 import ThemeSwitcher from "@/components/sandesh/ThemeSwitcher";
 import ThreeBackground from "@/components/three/ThreeBackground";
 import FloatingElements from "@/components/ui/FloatingElements";
+
+// SEO Component for dynamic meta tags
+const SEOHead = () => {
+  useEffect(() => {
+    // Update meta description dynamically
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Sandesh Ghimire - Passionate web developer from Nepal specializing in React.js, Node.js, and modern web technologies. View my portfolio and projects.');
+    }
+
+    // Add JSON-LD for breadcrumbs
+    const breadcrumbScript = document.createElement('script');
+    breadcrumbScript.type = 'application/ld+json';
+    breadcrumbScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ghimire-sandesh.com.np/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://ghimire-sandesh.com.np/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Skills",
+          "item": "https://ghimire-sandesh.com.np/#skills"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Projects",
+          "item": "https://ghimire-sandesh.com.np/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Contact",
+          "item": "https://ghimire-sandesh.com.np/#contact"
+        }
+      ]
+    });
+    document.head.appendChild(breadcrumbScript);
+
+    return () => {
+      if (document.head.contains(breadcrumbScript)) {
+        document.head.removeChild(breadcrumbScript);
+      }
+    };
+  }, []);
+
+  return null;
+};
 
 // --- Skeleton Loader Component ---
 function SkeletonLoader() {
@@ -200,41 +260,53 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-inter overflow-x-hidden">
-      <ThreeBackground />
-      <FloatingElements />
-      <Navbar data={sandeshData} onCoffeeClick={() => setIsCoffeeModalOpen(true)} />
-      <main>
-        <Hero data={sandeshData} />
-        <AboutMe data={sandeshData} />
-        <MySkills data={sandeshData} />
-        <MyProjects data={sandeshData} />
-        <Hobbies data={sandeshData} />
-        <ContactMe data={sandeshData} onSubmit={handleContactSubmit} />
-      </main>
-      <Footer data={sandeshData} />
-      <Toaster />
-      <BuyMeACoffeeModal 
-        isOpen={isCoffeeModalOpen} 
-        onClose={() => setIsCoffeeModalOpen(false)}
-        paymentOptions={sandeshData.paymentOptions}
-      />
-      
-      <motion.div 
+    <div className={`${currentTheme} min-h-screen transition-colors duration-500`}>
+      <SEOHead />
+      <div className="flex flex-col min-h-screen bg-background text-foreground">
+        <header>
+          <Navbar data={sandeshData} onCoffeeClick={() => setIsCoffeeModalOpen(true)} />
+        </header>
+        <main className="flex-1" role="main">
+          <section aria-label="Hero Section">
+            <Hero data={sandeshData} />
+          </section>
+          <section aria-label="About Me" id="about">
+            <AboutMe data={sandeshData} />
+          </section>
+          <section aria-label="My Skills" id="skills">
+            <MySkills data={sandeshData} />
+          </section>
+          <section aria-label="My Projects" id="projects">
+            <MyProjects data={sandeshData} />
+          </section>
+          <section aria-label="Hobbies" id="hobbies">
+            <Hobbies data={sandeshData} />
+          </section>
+          <section aria-label="Contact Me" id="contact">
+            <ContactMe data={sandeshData} onSubmit={handleContactSubmit} />
+          </section>
+        </main>
+        <footer>
+          <Footer data={sandeshData} />
+        </footer>
+        <ThemeSwitcher
+          currentTheme={currentTheme}
+          setCurrentTheme={setCurrentTheme}
+        />
+        <Toaster />
+      </div>
+
+      <motion.div
         className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-center"
       >
-        <ThemeSwitcher 
-          currentTheme={currentTheme} 
-          setCurrentTheme={setCurrentTheme} 
-        />
-         <Button 
+        <Button
           className="rounded-full p-3 shadow-xl bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white focus:ring-4 focus:ring-pink-400"
           onClick={() => setIsCoffeeModalOpen(true)}
           aria-label="Buy me a coffee"
         >
           <Coffee size={24} />
         </Button>
-        <Button 
+        <Button
           className="rounded-full p-3 shadow-xl bg-gradient-to-br from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white focus:ring-4 focus:ring-purple-400"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -244,6 +316,11 @@ function App() {
           <ChevronUp size={24} />
         </Button>
       </motion.div>
+      <BuyMeACoffeeModal
+        isOpen={isCoffeeModalOpen}
+        onClose={() => setIsCoffeeModalOpen(false)}
+        paymentOptions={sandeshData.paymentOptions}
+      />
     </div>
   );
 }
