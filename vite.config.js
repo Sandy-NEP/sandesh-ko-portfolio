@@ -63,6 +63,7 @@ export default defineConfig({
   customLogger: logger,
   plugins: [react(), addTransformIndexHtml],
   server: {
+    allowedHosts:['fb9883ae-420b-40b9-acb2-c8fea681c371-00-3f52hjpntdhfi.sisko.replit.dev'],
     host: '0.0.0.0',
     port: 5173,
     cors: true,
